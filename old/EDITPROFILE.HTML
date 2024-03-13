@@ -1,0 +1,189 @@
+<link href="EDITPROFILE.CSS" rel="stylesheet" type="text/css" />
+<link href="header_footer.css" rel="stylesheet" type="text/css" />
+
+<body>
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(https://wallpapercave.com/dwp2x/wp2595607.jpg); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-8"></span>
+      <!-- Header container -->
+      <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+          <div class="col-lg-7 col-md-10">
+            <h1 class="display-2 text-white">Edit Profile</h1>
+            <p class="text-white mt-0 mb-5">You can edit your profile informations here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">My account</h3>
+                </div>
+                <div class="col-4 text-right popup" onclick="myFunction()">
+                  <span class="popuptext" id="myPopup">Saved Sucessfully</span>
+                  <a href="#!" class="btn btn-sm btn-primary">Save</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form>
+                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="New">Element</label>
+                        <div class="custom-select" style="width:350px;">
+                          <select>
+                            <h1><option value="0">Please Select An Element:</option></h1>
+                            <option value="1">NAME</option>
+                            <option value="2">ID NUMBER</option>
+                            <option value="3">NAME OF HOSPITAL/SHELTER</option>
+                            <option value="7">CONTACT NUMBER</option>
+                            <option value="8">PASSWORD</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-text">Current</label>
+                        <input type="text" id="input-text" class="form-control form-control-alternative"placeholder="Current" value="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="New">New</label>
+                        <input type="text" id="input-new" class="form-control form-control-alternative" placeholder="New Information" value="">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-password">Password</label>
+                        <input type="password" id="input-password" class="form-control form-control-alternative"placeholder="Enter your Password" value="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <div class="main-content">
+      <div class="left box">
+      <h2>Contact Us</h2>
+          <div class="details">
+              <div class="phone">
+                  <p>&#9742;WhatsApp: 03-50056699</p>
+                  <p>&#9743;Customer Service:<a href="tel:+03-60067788">03-60067788</a></p>
+              </div>
+              
+              <div class="email">
+                  <p>&#128231;Email Us: <a href="mailto:services@elderlyhome.com">services@elderlyhome.com</a></p>
+                  
+              </div>
+          </div>
+      </div>
+      
+      <div class="middle box">
+          <h2>Address</h2>		
+          <p><a href="https://www.google.com/maps/place/Kuala+Lumpur,+Federal+Territory+of+Kuala+Lumpur/@3.1494821,101.686749,14z/data=!3m1!4b1!4m5!3m4!1s0x31cc49d5036b029b:0x4a66bf9a66f151bb!8m2!3d3.1416304!4d101.6954435">Kuala Lumpur, Malaysia</a></p>
+      </div>
+              
+      <div class="right box">
+          <h4>&#169;2018-2022 by Eldery Home's Club. All rights reserved.</h4>		
+      </div>
+  </div>
+</footer>
+
+<script>
+  var x, i, j, l, ll, selElmnt, a, b, c;
+  x = document.getElementsByClassName("custom-select");
+  l = x.length;
+  for (i = 0; i < l; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    ll = selElmnt.length;
+    a = document.createElement("DIV");
+    a.setAttribute("class", "select-selected");
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+    b = document.createElement("DIV");
+    b.setAttribute("class", "select-items select-hide");
+    for (j = 1; j < ll; j++) {
+      c = document.createElement("DIV");
+      c.innerHTML = selElmnt.options[j].innerHTML;
+      c.addEventListener("click", function(e) {
+          var y, i, k, s, h, sl, yl;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          sl = s.length;
+          h = this.parentNode.previousSibling;
+          for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;
+              h.innerHTML = this.innerHTML;
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              yl = y.length;
+              for (k = 0; k < yl; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              break;
+            }
+          }
+          h.click();
+      });
+      b.appendChild(c);
+    }
+    x[i].appendChild(b);
+    a.addEventListener("click", function(e) {
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+      });
+  }
+  function closeAllSelect(elmnt) {
+    var x, y, i, xl, yl, arrNo = [];
+    x = document.getElementsByClassName("select-items");
+    y = document.getElementsByClassName("select-selected");
+    xl = x.length;
+    yl = y.length;
+    for (i = 0; i < yl; i++) {
+      if (elmnt == y[i]) {
+        arrNo.push(i)
+      } else {
+        y[i].classList.remove("select-arrow-active");
+      }
+    }
+    for (i = 0; i < xl; i++) {
+      if (arrNo.indexOf(i)) {
+        x[i].classList.add("select-hide");
+      }
+    }
+  }
+  document.addEventListener("click", closeAllSelect);
+</script>
+  
+<script>
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+  </script>
